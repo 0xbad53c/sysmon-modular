@@ -1,0 +1,10 @@
+<Sysmon schemaversion="4.30">
+	<EventFiltering>
+		<RuleGroup name="" groupRelation="or">
+			<CreateRemoteThread onmatch="exclude">
+				<SourceImage condition="begin with">C:\Program Files (x86)\DesktopCentral_Agent</SourceImage>
+	            <SourceImage condition="begin with">C:\Program Files\DesktopCentral_Server</SourceImage>
+			</CreateRemoteThread>
+		</RuleGroup>
+	</EventFiltering>
+</Sysmon>

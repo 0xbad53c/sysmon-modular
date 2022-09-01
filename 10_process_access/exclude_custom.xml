@@ -1,0 +1,28 @@
+<Sysmon schemaversion="4.60">
+  <EventFiltering>
+    <RuleGroup name="" groupRelation="or">
+      <ProcessAccess onmatch="exclude">
+        <!-- DesktopCentral -->
+        <SourceImage condition="begin with">C:\Program Files (x86)\DesktopCentral_Agent</SourceImage>
+        <TargetImage condition="begin with">C:\Program Files (x86)\DesktopCentral_Agent</TargetImage>
+        <SourceImage condition="begin with">C:\Program Files\DesktopCentral_Server</SourceImage>
+        <TargetImage condition="begin with">C:\Program Files\DesktopCentral_Server</TargetImage>
+
+        <!-- Wazuh/OSSEC -->
+        <SourceImage condition="begin with">C:\Program Files (x86)\ossec-agent</SourceImage>
+        <TargetImage condition="begin with">C:\Program Files (x86)\ossec-agent</TargetImage>
+
+        <!-- Elastic Agent -->
+        <SourceImage condition="begin with">C:\Program Files\Elastic</SourceImage>
+        <TargetImage condition="begin with">C:\Program Files\Elastic</TargetImage>
+
+        <!-- Velociraptor -->
+        <SourceImage condition="is">C:\Program Files\Velociraptor\Velociraptor.exe</SourceImage>
+
+        <SourceImage condition="is">C:\Program Files\Microsoft\Exchange Server\V15\Bin\MSExchangeHMWorker.exe</SourceImage>
+        <SourceImage condition="contains all">C:\Users\;\AppData\Local\Microsoft\OneDrive\OneDrive.exe</SourceImage>
+        <SourceImage condition="contains all">C:\Users\;\AppData\Local\Microsoft\OneDrive\Update\OneDriveSetup.exe</SourceImage>
+      </ProcessAccess>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

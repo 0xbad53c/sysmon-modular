@@ -1,0 +1,22 @@
+<Sysmon schemaversion="4.30">
+	<EventFiltering>
+		<RuleGroup name="" groupRelation="or">
+			<ProcessCreate onmatch="exclude">
+				<!--SECTION: DesktopCentral-->
+                <CommandLine condition="begin with">C:\Program Files\DesktopCentral_Server</CommandLine>
+                <CommandLine condition="begin with">C:\Program Files (x86)\DesktopCentral_Agent</CommandLine>
+                <Image condition="begin with">C:\Program Files\DesktopCentral_Server</Image>
+                <Image condition="begin with">C:\Program Files (x86)\DesktopCentral_Agent</Image>
+                <ParentImage condition="begin with">C:\Program Files\DesktopCentral_Server</ParentImage>
+                <ParentImage condition="begin with">C:\Program Files (x86)\DesktopCentral_Agent</ParentImage>
+
+                <CommandLine condition="begin with">C:\Program Files\Windows Defender</CommandLine>
+                <CommandLine condition="begin with">C:\Program Files (x86)\ossec-agent</CommandLine>
+                <Image condition="begin with">C:\Program Files\Windows Defender</Image>
+                <Image condition="begin with">C:\Program Files (x86)\ossec-agent</Image>
+                <ParentImage condition="begin with">C:\Program Files\Windows Defender</ParentImage>
+                <ParentImage condition="begin with">C:\Program Files (x86)\ossec-agent</ParentImage>
+			</ProcessCreate>
+		</RuleGroup>
+	</EventFiltering>
+</Sysmon>

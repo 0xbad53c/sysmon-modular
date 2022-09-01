@@ -1,0 +1,18 @@
+<Sysmon schemaversion="4.30">
+   <EventFiltering>
+      <RuleGroup name="" groupRelation="or">
+         <FileCreate onmatch="exclude">
+            <Image condition="is">C:\Windows\SysWOW64\OneDriveSetup.exe</Image>
+            <Image condition="contains all">C:\Users\;\AppData\Local\Microsoft\OneDrive\Update\OneDriveSetup.exe</Image>
+            <Rule groupRelation="and">
+                <Image condition="is">C:\Windows\System32\svchost.exe</Image>
+                <TargetFilename condition="contains all">C:\Windows\System32\winevt\Logs\;.evtx</TargetFilename>
+            </Rule>
+            	<Image condition="is">C:\Program Files\DesktopCentral_Server\pgsql\data\pg_stat_tmp\global.tmp</Image>
+                <Image condition="is">C:\Program Files\DesktopCentral_Server\pgsql\data\pg_stat_tmp\db_0.tmp</Image>
+                <Image condition="is">C:\Windows\ServiceState\EventLog\Data\lastalive0.dat</Image>
+                <Image condition="is">C:\Windows\ServiceState\EventLog\Data\lastalive1.dat</Image>		
+         </FileCreate>
+      </RuleGroup>
+   </EventFiltering>
+</Sysmon>

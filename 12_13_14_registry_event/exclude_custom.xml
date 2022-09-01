@@ -1,0 +1,9 @@
+<Sysmon schemaversion="4.60">
+	<EventFiltering>
+		<RuleGroup name="" groupRelation="or">
+			<RegistryEvent onmatch="exclude">
+				<TargetObject condition="end with">System\CurrentControlSet\Services\ClipSVC\Parameters</TargetObject>
+			</RegistryEvent>
+		</RuleGroup>
+	</EventFiltering>
+</Sysmon>
