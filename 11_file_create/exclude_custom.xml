@@ -5,7 +5,6 @@
             <Image condition="is">C:\Windows\SysWOW64\OneDriveSetup.exe</Image>
             <Image condition="contains all">C:\Users\;\AppData\Local\Microsoft\OneDrive\Update\OneDriveSetup.exe</Image>
             <TargetFilename condition="contains all">C:\Windows\System32\winevt\Logs\;evtx</TargetFilename>
-            <TargetFilename condition="contains all">C:\Windows\Prefetch\;pf</TargetFilename>
             <Image condition="is">C:\Program Files\DesktopCentral_Server\pgsql\data\pg_stat_tmp\global.tmp</Image>
             <Image condition="is">C:\Program Files\DesktopCentral_Server\pgsql\data\pg_stat_tmp\db_0.tmp</Image>
             <Image condition="is">C:\Windows\ServiceState\EventLog\Data\lastalive0.dat</Image>

@@ -2,7 +2,7 @@
 	<EventFiltering>
 		<RuleGroup name="" groupRelation="or">
 			<RegistryEvent onmatch="exclude">
-				<TargetObject condition="end with">System\CurrentControlSet\Services\ClipSVC\Parameters</TargetObject>
+				<TargetObject condition="is">HKLM\System\CurrentControlSet\Services\ClipSVC\Parameters</TargetObject>
 			</RegistryEvent>
 		</RuleGroup>
 	</EventFiltering>
